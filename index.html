@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ACTIVIDAD</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #e5ecf1;
+      color: #003300;
+    }
+
+    .titulo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background-color: #cceeff;
+      color: black;
+      border-bottom: 2px solid black;
+      position: relative;
+    }
+
+    .titulo img {
+        position: absolute;
+        left: 20px;
+        height: 80px;
+        max-width: none;
+        flex-shrink: 0;
+    }
+
+    .texto-abajo {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        font-size: 14px;
+        color: #003300;
+        background: rgba(204,238, 255, 0.8);
+        padding: 5px 10px;
+    }
+
+    .titulo-texto {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      user-select: none;
+    }
+
+    .menu-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .menu-list a {
+      text-decoration: none;
+      color: #003300;
+      font-size: 18px;
+      padding: 10px 15px;
+      border: 1px solid #00660055;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .menu-list a:hover {
+      background-color: #90ee90;
+      color: black;
+    }
+
+    @media (max-width: 700px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .menu-list {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .menu-list.active {
+        display: flex;
+      }
+
+      .titulo {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .titulo img {
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="titulo">
+    <img src="img/LOGO-1-228x300.png" alt="Escudo">
+    <div class="titulo-texto">EJERCICIOS</div>
+  </div>
+
+  <div class="menu-container">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="texto-abajo">By: Rodrigo Ramirez Mendoza</div>
+    <div class="menu-list" id="menu">
+      <a href="ejercicio1.html">Ejercicio 1</a>
+      <a href="ejercicio2.html">Ejercicio 2</a>
+      <a href="ejercicio3.html">Ejercicio 3</a>
+      <a href="ejercicio4.html">Ejercicio 4</a>
+      <a href="ejercicio5.html">Ejercicio 5</a>
+      <a href="ejercicio6.html">Ejercicio 6</a>
+      <a href="ejercicio7.html">Ejercicio 7</a>
+      <a href="ejercicio8.html">Ejercicio 8</a>
+      <a href="ejercicio9.html">Ejercicio 9</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
